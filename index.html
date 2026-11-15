@@ -159,6 +159,21 @@ h2 em,.display em{font-style:italic;font-weight:400}
 .w>span{display:inline-block;transform:translateY(105%);transition:transform .9s var(--ease)}
 .hero.on .w>span{transform:none}
 @media (max-width:900px){.hero{min-height:0}.hero-in{grid-template-columns:minmax(0,1fr)}.hero-v{order:-1;min-height:0;aspect-ratio:4/3.4;margin-top:var(--hd)}.hero-v::after{background:linear-gradient(0deg,rgba(33,27,23,.5),transparent 45%)}.hero-t{padding:36px 20px 56px}.display{font-size:clamp(38px,10.5vw,58px)}.hero-off{max-width:none;right:auto;left:14px;bottom:14px;padding:11px 14px;gap:3px;flex-direction:row;align-items:baseline;flex-wrap:wrap;column-gap:10px}.ho-v{font-size:24px}.ho-v span{font-size:15px}.ho-s{display:none}.ho-k{font-size:10px}}
+
+/* desktop: full-screen photo hero (15 Nov 2026) */
+.hero-v picture{display:block;position:absolute;inset:0}
+@media (min-width:901px){
+ .hero{align-items:stretch}
+ .hero-in{grid-template-columns:minmax(0,1fr);position:relative}
+ .hero-v{position:absolute;inset:0;z-index:-1;min-height:0}
+ .hero-v img{object-position:58% 50%}
+ .hero-v::after{background:linear-gradient(90deg,rgba(26,21,18,.94) 0%,rgba(26,21,18,.86) 30%,rgba(26,21,18,.45) 55%,rgba(26,21,18,.08) 78%),linear-gradient(180deg,rgba(26,21,18,.55),transparent 22%),linear-gradient(0deg,rgba(26,21,18,.5),transparent 32%)}
+ .hero-t{max-width:none;padding-bottom:110px}
+ .hero-off{left:auto;right:max(24px,calc((100vw - 1340px)/2 + 24px));bottom:56px}
+ .js .hero .hero-v img{transform:scale(1.08);transition:transform 2.6s var(--ease)}
+}
+@media (min-width:901px) and (prefers-reduced-motion:no-preference){.hero.on .hero-v img{animation:kb 30s ease-in-out 2.6s infinite alternate}@keyframes kb{to{transform:scale(1.05) translateX(-1.2%)}}}
+@media (min-width:901px) and (max-height:780px){.hero-t{padding-top:calc(var(--hd) + 26px);padding-bottom:84px}.display{font-size:clamp(40px,4.4vw,64px);margin-top:16px}.lead{margin-top:18px}.ctas{margin-top:24px}.hero-g{margin-top:22px;padding-top:16px}.hero-off{bottom:28px;padding:14px 18px}.ho-s{display:none}}
 /* at a glance */
 .facts{background:var(--wool);border-bottom:1px solid var(--line)}
 .fx-g{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
@@ -486,7 +501,8 @@ input[type=range]::-moz-range-thumb{width:24px;height:24px;border-radius:50%;bac
    <p class="hero-g"><a href="#kritikes"><b>4,9</b> <span class="st" aria-hidden="true">★★★★★</span> <span data-en="on Google">στο Google</span></a><span class="dot"></span><span id="openNow" class="open-now" data-en="Mon–Sat 9:00–21:00">Δευ–Σάβ 09:00–21:00</span></p>
   </div>
   <figure class="hero-v">
-   <img src="assets/img/shop/magiko-xali-esoteriko-katastimatos-xalion-1200.webp" srcset="assets/img/shop/magiko-xali-esoteriko-katastimatos-xalion-700.webp 700w, assets/img/shop/magiko-xali-esoteriko-katastimatos-xalion-1200.webp 1200w" sizes="(max-width:900px) 100vw, 46vw" width="1600" height="2133" fetchpriority="high" decoding="async" alt="Το εσωτερικό του καταστήματος Μαγικό Χαλί στη Λεωφ. Μεσογείων 356, με ρολά και στοίβες χαλιών" data-en-alt="Inside the Magic Carpet shop on Mesogeion Ave 356, with rolls and stacks of rugs">
+   <picture><source media="(min-width:901px)" srcset="assets/img/shop/magiko-xali-katastima-xalion-agia-paraskevi-hero-1600.webp 1600w, assets/img/shop/magiko-xali-katastima-xalion-agia-paraskevi-hero-2400.webp 2400w" sizes="100vw" width="2400" height="1440">
+   <img src="assets/img/shop/magiko-xali-esoteriko-katastimatos-xalion-1200.webp" srcset="assets/img/shop/magiko-xali-esoteriko-katastimatos-xalion-700.webp 700w, assets/img/shop/magiko-xali-esoteriko-katastimatos-xalion-1200.webp 1200w" sizes="100vw" width="1600" height="2133" fetchpriority="high" decoding="async" alt="Το εσωτερικό του καταστήματος Μαγικό Χαλί στη Λεωφ. Μεσογείων 356, με ρολά και στοίβες χαλιών" data-en-alt="Inside the Magic Carpet shop on Mesogeion Ave 356, with rolls and stacks of rugs"></picture>
    <a class="hero-off" href="#prosfores"><span class="ho-k" data-en="Offer">Προσφορά</span><span class="ho-v"><b>2</b> <span data-en="rugs">χαλιά</span> <b>50€</b></span><span class="ho-s" data-en="Bedroom set €20 · runners €8–15/m">Σετ κρεβατοκάμαρας 20€ · διάδρομοι 8–15€/μ.</span></a>
   </figure>
  </div>
