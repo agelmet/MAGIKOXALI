@@ -3,8 +3,8 @@
  "short_name": "Μαγικό Χαλί",
  "start_url": "./",
  "display": "standalone",
- "background_color": "#EEE8DE",
- "theme_color": "#EEE8DE",
+ "background_color": "#E6EDE9",
+ "theme_color": "#E6EDE9",
  "icons": [
   {
    "src": "assets/icons/icon-192.png",
