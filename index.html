@@ -29,7 +29,7 @@
 <meta property="og:description" content="Κατάστημα χαλιών στη Λεωφ. Μεσογείων 356, Αγία Παρασκευή: 2 χαλιά 50€, διάδρομοι με το μέτρο 8–15€, στρογγυλά, παιδικά, shaggy, γούνινα, γιούτας, κλασικά και μοντέρνα.">
 <meta property="og:image" content="assets/img/og.jpg">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Μαγικό Χαλί — 2 χαλιά 50€, Λεωφ. Μεσογείων 356">
+<meta property="og:image:alt" content="Μαγικό Χαλί — 2 χαλιά 50€, Λεωφ. Μεσογείων, Αγία Παρασκευή">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Χαλιά Αγία Παρασκευή | Μαγικό Χαλί — Λεωφ. Μεσογείων 356">
 <meta name="twitter:description" content="Κατάστημα χαλιών στη Λεωφ. Μεσογείων 356, Αγία Παρασκευή: 2 χαλιά 50€, διάδρομοι με το μέτρο 8–15€, στρογγυλά, παιδικά, shaggy, γούνινα, γιούτας, κλασικά και μοντέρνα.">
@@ -455,28 +455,46 @@ input[type=range]::-moz-range-thumb{width:24px;height:24px;border-radius:50%;bac
 .rug h3{font-size:16.5px;line-height:1.3}
 @media (max-width:700px){.subchips{flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;margin:-24px -20px 28px;padding:2px 20px;scrollbar-width:none}.subchips::-webkit-scrollbar{display:none}.subchips button{flex:none}}
 </style>
-<style id="r3-css">
-/* round 3 hero: full-screen moving shop front */
+<style id="r4-css">
+/* round 4 hero: rug rooms slider + the offer */
 .hero-v{background:var(--night)}
-.hv-v{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.2s ease;pointer-events:none}
-.hv-v.on{opacity:1}
-.hv-sun{position:absolute;inset:0;pointer-events:none;background:radial-gradient(60% 50% at var(--sx,78%) 18%,rgba(255,226,160,.22),transparent 60%);mix-blend-mode:screen;opacity:.9}
-.hero-v::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.07;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E")}
+.hs{position:absolute;inset:0;overflow:hidden}
+.hs-i{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:70% 55%;opacity:0;transform:scale(1.07);transition:opacity 1s ease,transform 4.6s cubic-bezier(.2,.6,.3,1)}
+.hs-i.on{opacity:1;transform:scale(1)}
+.hero-v::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.06;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E")}
 .hero-v::after{z-index:1}
-.hero-off{z-index:3}
-@media (min-width:901px){
- .hero-v img{object-position:62% 50%}
- .hv-v{object-position:62% 50%}
- .hero-v::after{background:linear-gradient(90deg,rgba(10,20,38,.93) 0%,rgba(10,20,38,.82) 28%,rgba(10,20,38,.38) 52%,rgba(10,20,38,0) 72%),linear-gradient(180deg,rgba(10,20,38,.6),transparent 20%),linear-gradient(0deg,rgba(10,20,38,.55),transparent 30%)}
- .hero.on .hero-v img{animation:none}
-}
-@media (max-width:900px){.hero-v{aspect-ratio:4/3}.hero-v img,.hv-v{object-position:50% 50%}}
-@media (prefers-reduced-motion:reduce){.hv-v{display:none}}
-/* hero text: gold thread under the accent word */
-.display em{position:relative;white-space:nowrap}
-.display em::after{content:"";position:absolute;left:2%;right:2%;bottom:.02em;height:.07em;border-radius:9px;background:linear-gradient(90deg,var(--saf),var(--saf-l));transform:scaleX(0);transform-origin:left;transition:transform 1.1s var(--ease) .9s}
+.hs-nav{position:absolute;z-index:3;display:flex;gap:10px}
+.hs-c{position:relative;border:0;background:none;color:#fff;padding:14px 0 0;min-height:44px;text-align:left;font:700 12.5px/1.25 var(--sans);letter-spacing:.02em;opacity:.55;transition:opacity .3s;cursor:pointer;flex:1 1 0;min-width:0}
+.hs-c span{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hs-c i{position:absolute;left:0;right:0;top:0;height:2px;background:rgba(255,255,255,.28);border-radius:2px;overflow:hidden}
+.hs-c i::after{content:"";position:absolute;inset:0;background:var(--saf);transform:scaleX(0);transform-origin:left}
+.hs-c.on{opacity:1}.hs-c.on i::after{animation:hsbar var(--hsd,3.4s) linear forwards}
+.hs-c.done i::after{transform:scaleX(1)}
+@keyframes hsbar{to{transform:scaleX(1)}}
+.hero .display{font-size:clamp(62px,7.6vw,128px);line-height:.95;max-width:none;white-space:nowrap}
+.display em{position:relative;color:var(--saf-l)}
+.display em::after{content:"";position:absolute;left:2%;right:2%;bottom:.04em;height:.06em;border-radius:9px;background:linear-gradient(90deg,var(--saf),var(--saf-l));transform:scaleX(0);transform-origin:left;transition:transform 1.1s var(--ease) .9s}
 .hero.on .display em::after{transform:scaleX(1)}
-@media (prefers-reduced-motion:reduce){.display em::after{transform:none;transition:none}}
+.hero-sub{margin-top:18px;font:400 italic clamp(22px,2.1vw,32px)/1.25 var(--serif);color:#fff;max-width:26ch;text-wrap:balance}
+.js .hero .hero-sub{opacity:0;transform:translateY(14px);transition:opacity .7s .4s,transform .9s var(--ease) .4s}.js .hero.on .hero-sub{opacity:1;transform:none}
+.hero-chips{display:flex;flex-wrap:wrap;gap:8px;max-width:none}
+.hero-chips span{display:inline-block;padding:9px 14px;border-radius:999px;background:rgba(255,255,255,.08);box-shadow:inset 0 0 0 1px rgba(255,255,255,.2);font-size:14px;color:rgba(255,255,255,.88);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.hero-chips b{color:var(--saf-l);font-weight:800}
+@media (min-width:901px){
+ .hero-v::after{background:linear-gradient(90deg,rgba(10,20,38,.92) 0%,rgba(10,20,38,.8) 30%,rgba(10,20,38,.35) 56%,rgba(10,20,38,0) 76%),linear-gradient(180deg,rgba(10,20,38,.55),transparent 20%),linear-gradient(0deg,rgba(10,20,38,.6),transparent 28%)}
+ .hs-nav{right:max(24px,calc((100vw - 1340px)/2 + 24px));bottom:40px;width:min(600px,44vw)}
+}
+@media (min-width:901px) and (max-height:780px){.hero .display{font-size:clamp(56px,6.4vw,104px)}.hero-sub{margin-top:12px}.hs-nav{bottom:24px}}
+@media (max-width:900px){.hero-v{aspect-ratio:4/3}.hs-i{object-position:66% 60%}.hs-nav{left:14px;right:14px;bottom:12px;gap:6px}.hs-c{font-size:11px;padding-top:10px}.hs-c span{display:none}.hs-c{min-height:20px}.hero .display{font-size:clamp(54px,16vw,84px)}.hero-v::after{background:linear-gradient(0deg,rgba(10,20,38,.55),transparent 40%)}}
+@media (prefers-reduced-motion:reduce){.hs-i{transition:opacity .4s;transform:none}.hs-c.on i::after{animation:none;transform:scaleX(1)}}
+/* shop-front video in «Το κατάστημα» */
+.shopvid{margin:0 0 clamp(28px,3vw,40px)}
+.sv-f{position:relative;border-radius:14px;overflow:hidden;aspect-ratio:16/9;background:var(--night) center/cover no-repeat;box-shadow:var(--sh3)}
+.sv-v{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.sv-tag{position:absolute;left:clamp(14px,2vw,26px);bottom:clamp(14px,2vw,26px);display:flex;flex-direction:column;gap:4px;padding:14px 18px;border-radius:10px;background:rgba(15,27,51,.86);color:#fff;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.sv-tag b{font:500 26px/1 var(--serif);color:var(--saf-l)}.sv-tag span{font-size:13px;opacity:.8}
+.shopvid figcaption{margin-top:12px;font-size:14px;color:var(--mut)}
+@media (max-width:700px){.sv-f{aspect-ratio:4/3;border-radius:10px}.sv-tag{padding:10px 12px}.sv-tag b{font-size:20px}}
 </style>
 </head>
 <body>
@@ -525,8 +543,9 @@ input[type=range]::-moz-range-thumb{width:24px;height:24px;border-radius:50%;bac
  <div class="hero-in">
   <div class="hero-t">
    <h1 id="heroH1" class="eyebrow" data-en="Magic Carpet · rug shop in Agia Paraskevi, Mesogeion Ave 356">Μαγικό Χαλί · κατάστημα χαλιών στην Αγία Παρασκευή, Λεωφ. Μεσογείων 356</h1>
-   <p class="display" id="heroH" data-en="Rugs for every <em>room</em> in your home.">Χαλιά για κάθε <em>χώρο</em> του σπιτιού σας.</p>
-   <p class="lead" data-en="Round, oval, kids’, shaggy, faux fur, jute, all-season, Asian, Turkish and Syrian, classic and modern — a whole shop of rugs on Mesogeion Avenue, at fair prices.">Στρογγυλά, οβάλ, παιδικά, shaggy, γούνινα, γιούτας, all season, ασιατικά, από την Τουρκία και τη Συρία, κλασικά και μοντέρνα. Ένα ολόκληρο κατάστημα με χαλιά στη Λεωφόρο Μεσογείων, σε προσιτές τιμές.</p>
+   <p class="display" id="heroH" data-en="2 rugs <em>€50</em>">2 χαλιά <em>50€</em></p>
+   <p class="hero-sub" data-en="Rugs for every room in your home — on Mesogeion Avenue, Agia Paraskevi.">Χαλιά για κάθε χώρο του σπιτιού σας — στη Λεωφόρο Μεσογείων, Αγία Παρασκευή.</p>
+   <p class="lead hero-chips"><span data-en="Bedroom set <b>€20</b>">Σετ κρεβατοκάμαρας <b>20€</b></span><span data-en="Runners <b>€8–15</b>/m">Διάδρομοι <b>8–15€</b>/μ.</span><span data-en="Shaggy · faux fur · classic · modern · kids’">Shaggy · γούνινα · κλασικά · μοντέρνα · παιδικά</span></p>
    <div class="ctas">
     <a class="btn btn-g" href="#xalia"><span data-en="See the rugs">Δείτε τα χαλιά</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     <a class="btn btn-o" href="tel:+306950894736"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg><span>695 089 4736</span></a>
@@ -534,10 +553,8 @@ input[type=range]::-moz-range-thumb{width:24px;height:24px;border-radius:50%;bac
    <p class="hero-g"><a href="#kritikes"><b>4,9</b> <span class="st" aria-hidden="true">★★★★★</span> <span data-en="on Google">στο Google</span></a><span class="dot"></span><span id="openNow" class="open-now" data-en="Mon–Sat 9:00–21:00">Δευ–Σάβ 09:00–21:00</span></p>
   </div>
   <figure class="hero-v">
-   <picture><source media="(max-width:900px)" srcset="assets/img/shop/magiko-xali-prosopsi-katastimatos-kinito-960.webp" width="960" height="720"><img src="assets/img/shop/magiko-xali-prosopsi-katastimatos-mesogeion-1600.webp" srcset="assets/img/shop/magiko-xali-prosopsi-katastimatos-mesogeion-1600.webp 1600w, assets/img/shop/magiko-xali-prosopsi-katastimatos-mesogeion-1920.webp 1920w" sizes="100vw" width="1916" height="1080" fetchpriority="high" decoding="async" alt="Η πρόσοψη του καταστήματος χαλιών Μαγικό Χαλί στη Λεωφ. Μεσογείων, Αγία Παρασκευή, με την ταμπέλα «2 χαλιά 50€»" data-en-alt="The front of the Magic Carpet rug shop on Mesogeion Ave, Agia Paraskevi, with its “2 rugs €50” sign"></picture>
-   <video class="hv-v" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1" data-webm="assets/video/magiko-xali-katastima-hero.webm" data-mp4="assets/video/magiko-xali-katastima-hero.mp4" data-mwebm="assets/video/magiko-xali-katastima-hero-kinito.webm" data-mmp4="assets/video/magiko-xali-katastima-hero-kinito.mp4"></video>
-   <span class="hv-sun" aria-hidden="true"></span>
-   <a class="hero-off" href="#prosfores"><span class="ho-k" data-en="Offer">Προσφορά</span><span class="ho-v"><b>2</b> <span data-en="rugs">χαλιά</span> <b>50€</b></span><span class="ho-s" data-en="Bedroom set €20 · runners €8–15/m">Σετ κρεβατοκάμαρας 20€ · διάδρομοι 8–15€/μ.</span></a>
+   <div class="hs"><img class="hs-i on" src="assets/img/hero/magiko-xali-xali-klasiko-mple-saloni-1600.webp" srcset="assets/img/hero/magiko-xali-xali-klasiko-mple-saloni-1024.webp 1024w, assets/img/hero/magiko-xali-xali-klasiko-mple-saloni-1600.webp 1600w, assets/img/hero/magiko-xali-xali-klasiko-mple-saloni-2400.webp 2400w" sizes="100vw" width="2400" height="1355" fetchpriority="high" decoding="async" alt="Κλασικό χαλί με μενταγιόν σε σαλόνι — χαλιά από το Μαγικό Χαλί, Αγία Παρασκευή" data-en-alt="Classic medallion rug — rugs from Magic Carpet, Agia Paraskevi"><img class="hs-i" data-src="assets/img/hero/magiko-xali-xali-monterno-marmaro-saloni-1600.webp" data-srcset="assets/img/hero/magiko-xali-xali-monterno-marmaro-saloni-1024.webp 1024w, assets/img/hero/magiko-xali-xali-monterno-marmaro-saloni-1600.webp 1600w, assets/img/hero/magiko-xali-xali-monterno-marmaro-saloni-2400.webp 2400w" sizes="100vw" width="2400" height="1355" decoding="async" alt="Μοντέρνο, ασπρόμαυρο σε σαλόνι — χαλιά από το Μαγικό Χαλί, Αγία Παρασκευή" data-en-alt="Modern, black &amp; white — rugs from Magic Carpet, Agia Paraskevi"><img class="hs-i" data-src="assets/img/hero/magiko-xali-xali-neoklasiko-mpez-saloni-1600.webp" data-srcset="assets/img/hero/magiko-xali-xali-neoklasiko-mpez-saloni-1024.webp 1024w, assets/img/hero/magiko-xali-xali-neoklasiko-mpez-saloni-1600.webp 1600w, assets/img/hero/magiko-xali-xali-neoklasiko-mpez-saloni-2400.webp 2400w" sizes="100vw" width="2400" height="1355" decoding="async" alt="Νεοκλασικό, μπεζ σε σαλόνι — χαλιά από το Μαγικό Χαλί, Αγία Παρασκευή" data-en-alt="Neoclassical, beige — rugs from Magic Carpet, Agia Paraskevi"><img class="hs-i" data-src="assets/img/hero/magiko-xali-xali-mple-trapezaria-1600.webp" data-srcset="assets/img/hero/magiko-xali-xali-mple-trapezaria-1024.webp 1024w, assets/img/hero/magiko-xali-xali-mple-trapezaria-1600.webp 1600w, assets/img/hero/magiko-xali-xali-mple-trapezaria-2400.webp 2400w" sizes="100vw" width="2400" height="1355" decoding="async" alt="Ανάγλυφο, μπλε σε σαλόνι — χαλιά από το Μαγικό Χαλί, Αγία Παρασκευή" data-en-alt="Textured, blue — rugs from Magic Carpet, Agia Paraskevi"><img class="hs-i" data-src="assets/img/hero/magiko-xali-gounino-xali-krevatokamara-1600.webp" data-srcset="assets/img/hero/magiko-xali-gounino-xali-krevatokamara-1024.webp 1024w, assets/img/hero/magiko-xali-gounino-xali-krevatokamara-1600.webp 1600w, assets/img/hero/magiko-xali-gounino-xali-krevatokamara-2400.webp 2400w" sizes="100vw" width="2400" height="1355" decoding="async" alt="Γούνινο, λευκό σε σαλόνι — χαλιά από το Μαγικό Χαλί, Αγία Παρασκευή" data-en-alt="Faux fur, white — rugs from Magic Carpet, Agia Paraskevi"><img class="hs-i" data-src="assets/img/hero/magiko-xali-shaggy-xali-xryso-saloni-1600.webp" data-srcset="assets/img/hero/magiko-xali-shaggy-xali-xryso-saloni-1024.webp 1024w, assets/img/hero/magiko-xali-shaggy-xali-xryso-saloni-1600.webp 1600w, assets/img/hero/magiko-xali-shaggy-xali-xryso-saloni-2400.webp 2400w" sizes="100vw" width="2400" height="1355" decoding="async" alt="Shaggy, χρυσαφί σε σαλόνι — χαλιά από το Μαγικό Χαλί, Αγία Παρασκευή" data-en-alt="Shaggy, golden — rugs from Magic Carpet, Agia Paraskevi"></div>
+   <div class="hs-nav" role="group" aria-label="Σχέδια" data-en-aria="Designs"><button type="button" class="hs-c on" data-k="0"><i></i><span data-en="Classic">Κλασικό</span></button><button type="button" class="hs-c" data-k="1"><i></i><span data-en="Modern">Μοντέρνο</span></button><button type="button" class="hs-c" data-k="2"><i></i><span data-en="Neoclassical">Νεοκλασικό</span></button><button type="button" class="hs-c" data-k="3"><i></i><span data-en="Textured">Ανάγλυφο</span></button><button type="button" class="hs-c" data-k="4"><i></i><span data-en="Faux fur">Γούνινο</span></button><button type="button" class="hs-c" data-k="5"><i></i><span data-en="Shaggy">Shaggy</span></button></div>
   </figure>
  </div>
 </section>
@@ -1000,6 +1017,7 @@ input[type=range]::-moz-range-thumb{width:24px;height:24px;border-radius:50%;bac
    <h2 id="shH" class="lc" data-en="Walls of rugs, on Mesogeion Avenue">Τοίχοι από χαλιά, στη Λεωφόρο Μεσογείων</h2>
    <p class="sh-p" data-en="Hundreds of rolls, stacks and round rugs on the counter. Come, unroll them, feel them under your feet — that is the only way to choose a rug.">Εκατοντάδες ρολά, στοίβες και στρογγυλά πάνω στον πάγκο. Ελάτε, ξετυλίξτε τα, πατήστε τα — μόνο έτσι διαλέγεται ένα χαλί.</p>
   </div>
+<figure class="shopvid"><div class="sv-f"><video class="sv-v" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1" poster="assets/img/shop/magiko-xali-prosopsi-katastimatos-mesogeion-1600.webp" data-mposter="assets/img/shop/magiko-xali-prosopsi-katastimatos-kinito-960.webp" data-webm="assets/video/magiko-xali-katastima-hero.webm" data-mp4="assets/video/magiko-xali-katastima-hero.mp4" data-mwebm="assets/video/magiko-xali-katastima-hero-kinito.webm" data-mmp4="assets/video/magiko-xali-katastima-hero-kinito.mp4"></video><span class="sv-tag"><b data-en="2 rugs €50">2 χαλιά 50€</b><span data-en="Mesogeion Ave · Agia Paraskevi">Λεωφ. Μεσογείων · Αγία Παρασκευή</span></span></div><figcaption data-en="The shop front on Mesogeion Avenue — rugs out on the pavement every day.">Η πρόσοψη του καταστήματος στη Λεωφόρο Μεσογείων — χαλιά έξω στο πεζοδρόμιο κάθε μέρα.</figcaption></figure>
 <div class="gal"><div class="g-row"><figure class="ph " style="--r:0.7500"><button type="button" class="ph-b" data-lb="assets/img/shop/magiko-xali-vitrina-2-xalia-50-evro-1200.webp" aria-label="Μεγέθυνση: Η βιτρίνα: «2 χαλιά 50€»" data-en-aria="Enlarge: The shop window: “2 rugs €50”"><img src="assets/img/shop/magiko-xali-vitrina-2-xalia-50-evro-700.webp" srcset="assets/img/shop/magiko-xali-vitrina-2-xalia-50-evro-700.webp 700w, assets/img/shop/magiko-xali-vitrina-2-xalia-50-evro-1200.webp 1200w" sizes="(max-width:700px) 50vw, 33vw" alt="Μαγικό Χαλί, Μεσογείων 356 — Η βιτρίνα: «2 χαλιά 50€»" data-en-alt="Magic Carpet, Mesogeion Ave 356 — The shop window: “2 rugs €50”" width="1536" height="2048" loading="lazy" decoding="async"></button><figcaption data-en="The shop window: “2 rugs €50”">Η βιτρίνα: «2 χαλιά 50€»</figcaption></figure><figure class="ph " style="--r:0.7501"><button type="button" class="ph-b" data-lb="assets/img/shop/magiko-xali-tixos-me-rola-xalion-1200.webp" aria-label="Μεγέθυνση: Τοίχοι από ρολά" data-en-aria="Enlarge: Walls of rolls"><img src="assets/img/shop/magiko-xali-tixos-me-rola-xalion-700.webp" srcset="assets/img/shop/magiko-xali-tixos-me-rola-xalion-700.webp 700w, assets/img/shop/magiko-xali-tixos-me-rola-xalion-1200.webp 1200w" sizes="(max-width:700px) 50vw, 33vw" alt="Μαγικό Χαλί, Μεσογείων 356 — Τοίχοι από ρολά" data-en-alt="Magic Carpet, Mesogeion Ave 356 — Walls of rolls" width="1600" height="2133" loading="lazy" decoding="async"></button><figcaption data-en="Walls of rolls">Τοίχοι από ρολά</figcaption></figure><figure class="ph " style="--r:0.7500"><button type="button" class="ph-b" data-lb="assets/img/shop/magiko-xali-esoteriko-katastimatos-xalion-1200.webp" aria-label="Μεγέθυνση: Μέσα στο κατάστημα" data-en-aria="Enlarge: Inside the shop"><img src="assets/img/shop/magiko-xali-esoteriko-katastimatos-xalion-700.webp" srcset="assets/img/shop/magiko-xali-esoteriko-katastimatos-xalion-700.webp 700w, assets/img/shop/magiko-xali-esoteriko-katastimatos-xalion-1200.webp 1200w" sizes="(max-width:700px) 50vw, 33vw" alt="Μαγικό Χαλί, Μεσογείων 356 — Μέσα στο κατάστημα" data-en-alt="Magic Carpet, Mesogeion Ave 356 — Inside the shop" width="1536" height="2048" loading="lazy" decoding="async"></button><figcaption data-en="Inside the shop">Μέσα στο κατάστημα</figcaption></figure></div><div class="g-row"><figure class="ph " style="--r:0.7501"><button type="button" class="ph-b" data-lb="assets/img/shop/magiko-xali-stroggylo-xali-ston-pagko-1200.webp" aria-label="Μεγέθυνση: Στρογγυλά πάνω στον πάγκο" data-en-aria="Enlarge: Round rugs on the counter"><img src="assets/img/shop/magiko-xali-stroggylo-xali-ston-pagko-700.webp" srcset="assets/img/shop/magiko-xali-stroggylo-xali-ston-pagko-700.webp 700w, assets/img/shop/magiko-xali-stroggylo-xali-ston-pagko-1200.webp 1200w" sizes="(max-width:700px) 50vw, 33vw" alt="Μαγικό Χαλί, Μεσογείων 356 — Στρογγυλά πάνω στον πάγκο" data-en-alt="Magic Carpet, Mesogeion Ave 356 — Round rugs on the counter" width="1600" height="2133" loading="lazy" decoding="async"></button><figcaption data-en="Round rugs on the counter">Στρογγυλά πάνω στον πάγκο</figcaption></figure><figure class="ph " style="--r:0.7501"><button type="button" class="ph-b" data-lb="assets/img/shop/magiko-xali-rola-xalion-monterna-sxedia-1200.webp" aria-label="Μεγέθυνση: Μοντέρνα σχέδια" data-en-aria="Enlarge: Modern designs"><img src="assets/img/shop/magiko-xali-rola-xalion-monterna-sxedia-700.webp" srcset="assets/img/shop/magiko-xali-rola-xalion-monterna-sxedia-700.webp 700w, assets/img/shop/magiko-xali-rola-xalion-monterna-sxedia-1200.webp 1200w" sizes="(max-width:700px) 50vw, 33vw" alt="Μαγικό Χαλί, Μεσογείων 356 — Μοντέρνα σχέδια" data-en-alt="Magic Carpet, Mesogeion Ave 356 — Modern designs" width="1600" height="2133" loading="lazy" decoding="async"></button><figcaption data-en="Modern designs">Μοντέρνα σχέδια</figcaption></figure><figure class="ph " style="--r:0.7501"><button type="button" class="ph-b" data-lb="assets/img/shop/magiko-xali-rola-klasika-xalia-1200.webp" aria-label="Μεγέθυνση: Κλασικά και ανατολίτικα" data-en-aria="Enlarge: Classic and oriental"><img src="assets/img/shop/magiko-xali-rola-klasika-xalia-700.webp" srcset="assets/img/shop/magiko-xali-rola-klasika-xalia-700.webp 700w, assets/img/shop/magiko-xali-rola-klasika-xalia-1200.webp 1200w" sizes="(max-width:700px) 50vw, 33vw" alt="Μαγικό Χαλί, Μεσογείων 356 — Κλασικά και ανατολίτικα" data-en-alt="Magic Carpet, Mesogeion Ave 356 — Classic and oriental" width="1600" height="2133" loading="lazy" decoding="async"></button><figcaption data-en="Classic and oriental">Κλασικά και ανατολίτικα</figcaption></figure></div></div>
  </div>
 </section>
@@ -1403,14 +1421,23 @@ watch();onScroll();setInterval(openNow,60000);
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start); else start();
 })();
 </script>
-<script id="r3-js">(function(){var v=document.querySelector('.hv-v');if(!v)return;
-var c=navigator.connection||{};if(c.saveData||/2g/.test(c.effectiveType||'')||matchMedia('(prefers-reduced-motion:reduce)').matches)return;
-var m=matchMedia('(max-width:900px)').matches,d=v.dataset;
-function load(){[['webm',m?d.mwebm:d.webm],['mp4',m?d.mmp4:d.mp4]].forEach(function(x){var s=document.createElement('source');s.src=x[1];s.type='video/'+x[0];v.appendChild(s)});
- v.addEventListener('playing',function(){v.classList.add('on')},{once:true});v.load();
- new IntersectionObserver(function(e){e[0].isIntersecting?v.play().catch(function(){}):v.pause()},{threshold:.1}).observe(v)}
-(window.requestIdleCallback||function(f){setTimeout(f,500)})(load,{timeout:1200});
-var hv=document.querySelector('.hero-v');if(matchMedia('(hover:hover)').matches&&hv)hv.parentElement.parentElement.addEventListener('pointermove',function(e){hv.style.setProperty('--sx',(55+e.clientX/innerWidth*35).toFixed(1)+'%')},{passive:true})})();</script>
+<script id="r4-js">(function(){
+var RM=matchMedia('(prefers-reduced-motion:reduce)').matches,M=matchMedia('(max-width:900px)').matches;
+/* hero slider */
+var im=[].slice.call(document.querySelectorAll('.hs-i')),cs=[].slice.call(document.querySelectorAll('.hs-c')),cur=0,T=null,D=3400;
+document.documentElement.style.setProperty('--hsd',D+'ms');
+function ld(i){var x=im[i];if(x&&x.dataset.src){x.srcset=x.dataset.srcset;x.src=x.dataset.src;delete x.dataset.src}}
+function go(n){ld(n);ld((n+1)%im.length);im[cur].classList.remove('on');im[n].classList.add('on');cs.forEach(function(c,k){c.classList.remove('on');c.classList.toggle('done',k<n)});void cs[n].offsetWidth;cs[n].classList.add('on');cur=n;clearTimeout(T);T=setTimeout(function(){go((cur+1)%im.length)},D)}
+if(im.length){(window.requestIdleCallback||function(f){setTimeout(f,300)})(function(){ld(1)});
+ cs.forEach(function(c,k){c.addEventListener('click',function(){go(k)})});
+ setTimeout(function(){go(0)},RM?0:600);
+ document.addEventListener('visibilitychange',function(){if(document.hidden)clearTimeout(T);else go(cur)});}
+/* shop-front video: plays only while on screen */
+var v=document.querySelector('.sv-v');if(!v)return;var d=v.dataset;
+if(M&&d.mposter)v.poster=d.mposter;
+var c=navigator.connection||{};if(c.saveData||RM)return;var ok=0;
+new IntersectionObserver(function(e){if(e[0].isIntersecting){if(!ok){ok=1;[['webm',M?d.mwebm:d.webm],['mp4',M?d.mmp4:d.mp4]].forEach(function(x){var s=document.createElement('source');s.src=x[1];s.type='video/'+x[0];v.appendChild(s)});v.load()}v.play().catch(function(){})}else if(ok)v.pause()},{rootMargin:'200px 0px'}).observe(v);
+})();</script>
 <script id="advon-en-nav">/* flags = links between / and /en (Google ranks both) */document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest("button[data-l],button[data-lang],a[data-l],a[data-lang],[data-set-lang]");if(!b)return;var l=b.getAttribute("data-l")||b.getAttribute("data-lang")||b.getAttribute("data-set-lang");if(l==="el"||(l!=="el"&&l!=="en"))return;e.preventDefault();e.stopImmediatePropagation();location.href=(l==="en"?"en":"./")+location.hash},true)</script>
 </body>
 </html>
